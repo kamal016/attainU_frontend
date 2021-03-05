@@ -13,7 +13,7 @@ import { toast } from "react-toastify";
 import Login from "./components/login";
 import Register from "./components/register";
 import Home from "./components/Home";
-import Myposts from "./components/myPosts";
+
 
 toast.configure();
 
@@ -65,10 +65,6 @@ function App(){
             <Route
             exact path="/"
             render={props => isAuthenticated ? (<Login {...props} setAuth={setAuth} />) : (<Redirect to="/login" />)}
-            />
-            <Route
-            exact path="/myPosts"
-            render={props => isAuthenticated ? (<Myposts {...props} setAuth={setAuth} />) : (<Redirect to="/myPosts" />)}
             />
             
           </Switch>
